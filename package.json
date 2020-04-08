@@ -18,7 +18,8 @@
     "prettier:check": "prettier --list-different \"./{src,e2e}/**/*.{ts,js,html,scss}\"",
     "postinstall": "npm run prettier -s",
     "generate": "ng generate",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress": "cypress run"
   },
   "dependencies": {
     "@angular/animations": "^9.1.0",
