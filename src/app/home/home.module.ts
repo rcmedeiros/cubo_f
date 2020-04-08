@@ -23,13 +23,9 @@ import { ChartsModule } from 'ng2-charts';
     FormsModule,
     BrowserModule,
     HttpClientModule,
-    ChartsModule
+    ChartsModule,
   ],
-  providers: [
-    CuboApi,
-  ],
-  declarations: [
-    HomeComponent
-  ]
+  providers: [CuboApi],
+  declarations: [HomeComponent],
 })
-export class HomeModule { }
+export class HomeModule {}

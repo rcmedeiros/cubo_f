@@ -1,6 +1,6 @@
 export interface Data {
-    id?: number;
-    firstName: string;
-    lastName: string;
-    participation: number;
+  id?: number;
+  firstName: string;
+  lastName: string;
+  participation: number;
 }

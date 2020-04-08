@@ -8,10 +8,9 @@ import { MultiDataSet, Label } from 'ng2-charts';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
   public quote: string | undefined;
   public isLoading = false;
   public firstName: string;
@@ -28,11 +27,65 @@ export class HomeComponent implements OnInit {
   public chartType: ChartType = 'doughnut';
 
   // Component's random color generator is broken. @see https://github.com/valor-software/ng2-charts/issues/251
-  public colors: any[] = [{
-    backgroundColor: ['#2C96DD', '#00BB9B', '#9C55B8', '#B2B4B4', '#E94B35', '#b8436d', '#00d9f9', '#a4c73c', '#a4add3', '#b7c0d9', '#d0a12d', '#ad519d', '#99bcba', '#e3f42f', '#7551c3', '#f88d05', '#67f703', '#3c95ff', '#2f18ae', '#5fb36e', '#5eab46', '#c2338c', '#cf0c97', '#94487e', '#53fe54', '#4f494d', '#17cbf9', '#5d21d8', '#80638a', '#5de104', '#dc8d81', '#77f398', '#282c1e', '#d33ff0', '#a06027', '#7eed1d', '#e71913', '#587796', '#9b0e7a', '#9405f2', '#ae5911', '#983660', '#e95160', '#47dd50', '#c48f61', '#003264', '#285d5e', '#959eeb', '#7d3039', '#3bfbab', '#bc00e2']
-  }];
+  public colors: any[] = [
+    {
+      backgroundColor: [
+        '#2C96DD',
+        '#00BB9B',
+        '#9C55B8',
+        '#B2B4B4',
+        '#E94B35',
+        '#b8436d',
+        '#00d9f9',
+        '#a4c73c',
+        '#a4add3',
+        '#b7c0d9',
+        '#d0a12d',
+        '#ad519d',
+        '#99bcba',
+        '#e3f42f',
+        '#7551c3',
+        '#f88d05',
+        '#67f703',
+        '#3c95ff',
+        '#2f18ae',
+        '#5fb36e',
+        '#5eab46',
+        '#c2338c',
+        '#cf0c97',
+        '#94487e',
+        '#53fe54',
+        '#4f494d',
+        '#17cbf9',
+        '#5d21d8',
+        '#80638a',
+        '#5de104',
+        '#dc8d81',
+        '#77f398',
+        '#282c1e',
+        '#d33ff0',
+        '#a06027',
+        '#7eed1d',
+        '#e71913',
+        '#587796',
+        '#9b0e7a',
+        '#9405f2',
+        '#ae5911',
+        '#983660',
+        '#e95160',
+        '#47dd50',
+        '#c48f61',
+        '#003264',
+        '#285d5e',
+        '#959eeb',
+        '#7d3039',
+        '#3bfbab',
+        '#bc00e2',
+      ],
+    },
+  ];
 
-  constructor(private cuboApi: CuboApi) { }
+  constructor(private cuboApi: CuboApi) {}
 
   async ngOnInit() {
     this.isLoading = true;
@@ -45,7 +98,6 @@ export class HomeComponent implements OnInit {
       try {
         await this.cuboApi.data.postData(this.firstName, this.lastName, this.participation);
         await this.refresh();
-
       } catch (e) {
         this.errorMessage = e.status === 400 ? e.error.error : 'Connection failed';
         setTimeout(() => {
@@ -72,7 +124,6 @@ export class HomeComponent implements OnInit {
     this.firstNameInvalid = !this.firstName;
     this.lastNameInvalid = !this.lastName;
     this.participationInvalid = this.participation === undefined;
-    return !(this.firstNameInvalid || this.lastNameInvalid || this.participationInvalid)
+    return !(this.firstNameInvalid || this.lastNameInvalid || this.participationInvalid);
   }
-
 }

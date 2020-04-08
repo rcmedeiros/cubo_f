@@ -19,7 +19,7 @@ export const environment = {
   supportedLanguages: ['en-US'],
   cubo_b: {
     url: 'http://localhost:8080',
-    api: 'api'
+    api: 'api',
   },
 };
 
