@@ -11,7 +11,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { CuboApi } from '@app/services/cubo';
 
-
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   imports: [
@@ -22,7 +22,8 @@ import { CuboApi } from '@app/services/cubo';
     HomeRoutingModule,
     FormsModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [
     CuboApi,
