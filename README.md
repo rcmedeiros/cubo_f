@@ -2,9 +2,9 @@
 
 ## Installation
 
-`git clone https://github.com/rcmedeiros/cubo_f.git`
-`cd cubo_f`
-`npm i`
+- `git clone https://github.com/rcmedeiros/cubo_f.git`
+- `cd cubo_f`
+- `npm i`
 
 ## Running
 
