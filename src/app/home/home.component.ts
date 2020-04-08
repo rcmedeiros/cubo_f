@@ -108,6 +108,9 @@ export class HomeComponent implements OnInit {
   }
 
   private async refresh() {
+    this.firstName = undefined;
+    this.lastName = undefined;
+    this.participation = undefined;
     this.data = await this.cuboApi.data.getData();
 
     this.chartLabels = [];
